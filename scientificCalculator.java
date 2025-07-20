@@ -39,6 +39,19 @@ public class scientificCalculator {
                         performPower(input);
                         break;
 
+                    case 7:
+                        preformSine(input);
+                        break;
+
+                    case 8:
+                        preformCosine(input);
+                        break;
+
+                    case 9:
+                        preformTangent(input);
+                        break;
+
+
                     case 0:
                         run = false;
                         System.out.println("Exiting calculator. Goodbye!");
@@ -64,6 +77,9 @@ public class scientificCalculator {
         System.out.println("4. Division");
         System.out.println("5. Square Root");
         System.out.println("6. Power");
+        System.out.println("7. Sine");
+        System.out.println("8. cosine");
+        System.out.println("9. tangent");
         System.out.println("0. Exit");
     }
     public static double add(double num1, double num2){
@@ -94,6 +110,17 @@ public class scientificCalculator {
     public static double calculatePower(double base, double exponent){
         return Math.pow(base, exponent);
     }
+    public static double calculateSine (double degrees){
+        return degrees;
+    }
+    public static double calculateCos (double degrees){
+        return degrees;
+    }
+    public static double calculateTan (double degrees){
+        return degrees;
+    }
+
+
 
     private static void performAddition(Scanner input) {
         try {
@@ -166,6 +193,43 @@ public class scientificCalculator {
             double exponent = input.nextDouble();
             double result = calculatePower(base, exponent);
             System.out.println("Result: " + base + "^" + exponent + " = " + result);
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid input! please enter a numeric value");
+            input.next();
+        }
+    }
+    private static void preformSine(Scanner input){
+        try{
+            System.out.println("Enter the degrees: ");
+            double degrees = input.nextDouble();
+            double result = Math.sin(degrees);
+            System.out.println(degrees + " will equal to "+ result+ " using sine");
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid input! please enter a numeric value");
+            input.next();
+        }
+    }
+    private static void preformCosine(Scanner input){
+        try{
+            System.out.println("Enter the degrees: ");
+            double degrees = input.nextDouble();
+            double result = Math.cos(degrees);
+            System.out.println(degrees + " will equal to "+ result+ " using cosine");
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid input! please enter a numeric value");
+            input.next();
+        }
+    }
+    private static void preformTangent(Scanner input){
+        try{
+            System.out.println("Enter the degrees: ");
+            double degrees = input.nextDouble();
+            if (degrees % 180 == 90) {
+                System.out.println("Tangent is undefined at " + degrees + " degrees.");
+            } else {
+                double result = Math.ceil(Math.tan(Math.toRadians(degrees)));
+                System.out.println(degrees + " degrees = " + result + " using tangent");
+            }
         } catch (InputMismatchException e) {
             System.out.println("Invalid input! please enter a numeric value");
             input.next();
