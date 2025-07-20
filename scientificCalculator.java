@@ -420,7 +420,7 @@ public class scientificCalculator {
             double result = Math.max(num1, num2);
             System.out.println("The maximum from "+num1+ " and " +num2 +" is " + result);
         } catch (InputMismatchException e) {
-            System.out.println("Invalid input! please enter a numeric value");
+            System.out.println("Invalid input!! please enter a numeric value");
             input.next();
         }
     }
