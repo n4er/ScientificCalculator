@@ -7,7 +7,7 @@ public class scientificCalculator {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         boolean run = true;
-        System.out.println("Welcome to Scientific Calculator");
+        System.out.println("------ Welcome to the simple Scientific Calculator ------");
 
         while (run) {
             displayMenu();
