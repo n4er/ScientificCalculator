@@ -75,6 +75,10 @@ public class scientificCalculator {
                         preformFloor(input);
                         break;
 
+                    case 16:
+                        preformMin(input);
+                        break;
+
                     case 0:
                         run = false;
                         System.out.println("Exiting calculator. Goodbye!");
@@ -109,6 +113,7 @@ public class scientificCalculator {
         System.out.println("13. Rounding");
         System.out.println("14. Ceiling");
         System.out.println("15. Flooring");
+        System.out.println("16. Minimum");
         System.out.println("0. Exit");
     }
     public static double add(double num1, double num2){
@@ -164,6 +169,9 @@ public class scientificCalculator {
         return num;
     }
     public static double calculateFloor (double num){
+        return num;
+    }
+    public static double calculateMin (double num){
         return num;
     }
 
@@ -355,4 +363,16 @@ public class scientificCalculator {
             input.next();
         }
     }
+    private static void preformMin (Scanner input){
+        try {
+            System.out.println("Enter the first number: ");
+            double num1 = input.nextDouble();
+            System.out.println("Enter the second number: ");
+            double num2 = input.nextDouble();
+            double result = Math.min(num1, num2);
+            System.out.println("The minimum from these two numbers is: "+result);
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid input! please enter a numeric value");
+            input.next();
+        }
 }
