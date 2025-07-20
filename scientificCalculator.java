@@ -59,6 +59,10 @@ public class scientificCalculator {
                         preformLogBase10(input);
                         break;
 
+                    case 12:
+                        preformAbsoluteValue(input);
+                        break;
+
                     case 0:
                         run = false;
                         System.out.println("Exiting calculator. Goodbye!");
@@ -89,6 +93,7 @@ public class scientificCalculator {
         System.out.println("9. tangent");
         System.out.println("10. Natural Logarithm");
         System.out.println("11. Logarithm Base 10");
+        System.out.println("12. Absolute Value");
         System.out.println("0. Exit");
     }
     public static double add(double num1, double num2){
@@ -134,7 +139,9 @@ public class scientificCalculator {
     public static double calculateLogarithmBase10 (double num){
         return num;
     }
-
+    public static double calculateAbsoluteValue (double num){
+        return num;
+    }
 
 
     private static void performAddition(Scanner input) {
@@ -276,6 +283,17 @@ public class scientificCalculator {
                 System.out.println("The natural logarithm of "+num+ " is "+result);
             }
         } catch(InputMismatchException e){
+            System.out.println("Invalid input! please enter a numeric value");
+            input.next();
+        }
+    }
+    private static void preformAbsoluteValue (Scanner input){
+        try {
+            System.out.println("Enter a number to find it's absolute value");
+            double num = input.nextDouble();
+            double result = Math.abs(num);
+            System.out.println("The absolute value of "+num+ " is "+result);
+        } catch (InputMismatchException e) {
             System.out.println("Invalid input! please enter a numeric value");
             input.next();
         }
