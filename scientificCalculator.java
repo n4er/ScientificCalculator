@@ -2,6 +2,60 @@ import java.util.InputMismatchException;
 import java.util.Scanner; //used read input from the user
 
 public class scientificCalculator {
+
+
+    public static void main (String[] args){
+        Scanner input = new Scanner(System.in);
+        boolean run = true;
+        System.out.println("Welcome to Scientific Calculator");
+
+        while (run){
+            displayMenu();
+            try {
+                System.out.println("Enter your choice: ");
+                int choice = input.nextInt();
+                switch (choice){
+                    case 1:
+                        performAddition(input);
+                        break;
+
+                    case 2:
+                        performSubtraction(input);
+                        break;
+
+                    case 3:
+                        performMultiply(input);
+                        break;
+
+                    case 4:
+                        performDivision(input);
+                        break;
+
+                    case 5:
+                        performSquareRoot(input);
+                        break;
+
+                    case 6:
+                        performPower(input);
+                        break;
+
+                    case 0:
+                        run = false;
+                        System.out.println("Exiting calculator. Goodbye!");
+                        break;
+
+                    default:
+                        System.out.println("Invalid ipnut. Please choose a number from the menu");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input. Please enter a number:");
+            }
+            System.out.println("\n---------------------------------------\n");
+        }
+        System.out.println("You want help ?? call the instructor");
+        input.close();
+    }
+
     public static void displayMenu(){
         System.out.println("--- Scientific Calculator ---");
         System.out.println("1. Addition");
