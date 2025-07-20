@@ -51,7 +51,10 @@ public class scientificCalculator {
                         preformTangent(input);
                         break;
 
-
+                    case 10:
+                        preformNaturalLogrithm(input);
+                        break;
+                        
                     case 0:
                         run = false;
                         System.out.println("Exiting calculator. Goodbye!");
@@ -80,6 +83,7 @@ public class scientificCalculator {
         System.out.println("7. Sine");
         System.out.println("8. cosine");
         System.out.println("9. tangent");
+        System.out.println("10. Natural Logrithm");
         System.out.println("0. Exit");
     }
     public static double add(double num1, double num2){
@@ -118,6 +122,9 @@ public class scientificCalculator {
     }
     public static double calculateTan (double degrees){
         return degrees;
+    }
+    public static double calculateNaturalLogrithm (double num) {
+        return num;
     }
 
 
@@ -233,6 +240,21 @@ public class scientificCalculator {
         } catch (InputMismatchException e) {
             System.out.println("Invalid input! please enter a numeric value");
             input.next();
+        }
+    }
+    private static void preformNaturalLogrithm(Scanner input){
+        try {
+            System.out.println("Enter a number to find it's logrithm to base 10: ");
+            double num = input.nextDouble();
+            if (num <0 ){
+                System.out.println("Invalid input. cannot find the natural logrithm of a negative number");
+            } else {
+                double result = Math.log(num);
+                System.out.println("The natural logrithm of "+ num + " is " + result);
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input! please enter a numeric value");
+                input.next();
+            }
         }
     }
 }
