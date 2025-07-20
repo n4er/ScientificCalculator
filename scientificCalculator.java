@@ -67,6 +67,13 @@ public class scientificCalculator {
                         preformRound(input);
                         break;
 
+                    case 14:
+                        preformCeil(input);
+                        break;
+
+                    case 15:
+                        preformFloor(input);
+                        break;
 
                     case 0:
                         run = false;
@@ -100,6 +107,8 @@ public class scientificCalculator {
         System.out.println("11. Logarithm Base 10");
         System.out.println("12. Absolute Value");
         System.out.println("13. Rounding");
+        System.out.println("14. Ceiling");
+        System.out.println("15. Flooring");
         System.out.println("0. Exit");
     }
     public static double add(double num1, double num2){
@@ -151,6 +160,13 @@ public class scientificCalculator {
     public static double calculateRound (double num){
         return num;
     }
+    public static double calculateCeil (double num){
+        return num;
+    }
+    public static double calculateFloor (double num){
+        return num;
+    }
+
 
     private static void performAddition(Scanner input) {
         try {
@@ -312,6 +328,28 @@ public class scientificCalculator {
             double num = input.nextDouble();
             double result = Math.round(num);
             System.out.println("The value of "+num+ " is rounded to "+result);
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid input! please enter a numeric value");
+            input.next();
+        }
+    }
+    private static void preformCeil (Scanner input){
+        try {
+            System.out.println("Enter a number to ceil it");
+            double num = input.nextDouble();
+            double result = Math.ceil(num);
+            System.out.println("The value of "+num+ " is ceiled to "+result);
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid input! please enter a numeric value");
+            input.next();
+        }
+    }
+    private static void preformFloor (Scanner input){
+        try {
+            System.out.println("Enter a number to floor it");
+            double num = input.nextDouble();
+            double result = Math.floor(num);
+            System.out.println("The value of "+num+ " is floored to "+result);
         } catch (InputMismatchException e) {
             System.out.println("Invalid input! please enter a numeric value");
             input.next();
